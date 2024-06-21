@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio - Your Name</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="video1.mov" type="video/mp4">
+    </video>
+    <header>
+        <img src="logo.png" alt="Your Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>The Dreamy Notes</h1>
+            <p>Explore the world through my lens</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="profile-picture.jpg" alt="Profile Picture">
+                <p>I'm passionate about capturing moments that tell stories through my lens. With a keen eye for detail and a love for natural light, I strive to create timeless images that evoke emotion.</p>
+                <p>Based in [Your Location], I specialize in [Photography Type]. Whether it's weddings, portraits, or landscapes, I aim to deliver images that exceed expectations.</p>
+                <button id="toggleButton">Show More</button>
+                <div id="moreContent" style="display: none;">
+                    <p>Feel free to reach out for collaborations or to discuss your photography needs. I'm excited to hear your story and capture it through my lens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="gallery">
+                <div class="photo">
+                    <img src="photo1.jpg" alt="Photo 1">
+                    <div class="overlay">
+                        <a href="photo1.jpg" target="_blank" class="zoom-icon">View</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="photo2.jpg" alt="Photo 2">
+                    <div class="overlay">
+                        <a href="photo2.jpg" target="_blank" class="zoom-icon">View</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="photo3.jpg" alt="Photo 3">
+                    <div class="overlay">
+                        <a href="photo3.jpg" target="_blank" class="zoom-icon">View</a>
+                    </div>
+                </div>
+                <!-- Add more photos as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

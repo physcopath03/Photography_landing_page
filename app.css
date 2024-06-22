@@ -16,6 +16,7 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    transition: filter 0.3s ease; /* Smooth transition for filter property */
 }
 
 .logo {
@@ -25,6 +26,13 @@ body {
     width: 45px; /* Adjust width of your logo */
     height: 45px; /* Adjust height of your logo */
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001; /* Ensure logo is above the video */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for transform and background-color */
+}
+
+.logo:hover {
+    transform: rotate(360deg); /* Example transformation on hover */
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
 }
 
 header {
@@ -35,6 +43,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth transition for background-color */
 }
 
 header nav ul {
@@ -53,7 +62,7 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Smooth transition for color */
 }
 
 header nav ul li a:hover {
@@ -64,6 +73,12 @@ header nav ul li a:hover {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Initial box shadow */
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
 }
 
 .hero {
@@ -72,20 +87,44 @@ header nav ul li a:hover {
     background-image: url('hero-background.jpg');
     background-size: cover;
     color: greenyellow;
+    transition: color 0.3s ease, background-position 0.3s ease; /* Smooth transitions */
+    background-position: center; /* Initial background position */
+}
+
+.hero:hover {
+    color: yellow; /* Example color change on hover */
+    background-position: top; /* Change background position on hover */
 }
 
 .container p {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.3s ease; /* Smooth transition for text-shadow */
+}
+
+.container p:hover {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Example text-shadow on hover */
 }
 
 .hero h1 {
     font-size: 3em;
     margin-bottom: 20px;
+    transition: font-size 0.3s ease, margin-bottom 0.3s ease; /* Smooth transitions */
+}
+
+.hero h1:hover {
+    font-size: 3.5em; /* Example font-size change on hover */
+    margin-bottom: 30px; /* Example margin-bottom change on hover */
 }
 
 .hero p {
     font-size: 1.5em;
     font-style: italic;
+    transition: font-size 0.3s ease, font-style 0.3s ease; /* Smooth transitions */
+}
+
+.hero p:hover {
+    font-size: 1.8em; /* Example font-size change on hover */
+    font-style: normal; /* Example font-style change on hover */
 }
 
 section {
@@ -146,7 +185,8 @@ section h2 {
 
 .button:hover {
     background-color: #555;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slightly larger button on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Example box shadow on hover */
 }
 
 #toggleButton {
@@ -161,12 +201,13 @@ section h2 {
     margin: 4px 2px; /* Some margin */
     cursor: pointer; /* Pointer/hand icon */
     border-radius: 12px; /* Rounded corners */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 #toggleButton:hover {
     background-color: #45a049; /* Darker green background on hover */
-    transform: scale(1.05); /* Slightly larger button */
+    transform: scale(1.05); /* Slightly larger button on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Example box shadow on hover */
 }
 
 #toggleButton:active {
@@ -185,11 +226,12 @@ section h2 {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .photo:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Example box shadow on hover */
 }
 
 .photo img {
@@ -237,6 +279,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: relative; /* Corrected to relative for better footer behavior */
+    position: relative; /* Ensure footer stays at the bottom */
     width: 100%;
 }

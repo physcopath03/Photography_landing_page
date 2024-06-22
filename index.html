@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photographer Portfolio - Your Name</title>
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Google Material Icons -->
 </head>
 <body>
     <video autoplay muted loop id="myVideo">
@@ -36,7 +37,7 @@
                 <img src="profile-picture.jpg" alt="Profile Picture">
                 <p>I'm passionate about capturing moments that tell stories through my lens. With a keen eye for detail and a love for natural light, I strive to create timeless images that evoke emotion.</p>
                 <p>Based in [Your Location], I specialize in [Photography Type]. Whether it's weddings, portraits, or landscapes, I aim to deliver images that exceed expectations.</p>
-                <button id="toggleButton" class="button">Show More</button>
+                <button id="toggleButton">Show More</button>
                 <div id="moreContent" style="display: none;">
                     <p>Feel free to reach out for collaborations or to discuss your photography needs. I'm excited to hear your story and capture it through my lens.</p>
                 </div>
@@ -69,7 +70,7 @@
                 <!-- Add more photos as needed -->
             </div>
         </div>
-    </section>
+    </section>  
 
     <section id="contact" class="fade-in">
         <div class="container">
@@ -84,7 +85,7 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
 
-                <button type="submit" class="button">Send Message</button>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
@@ -92,6 +93,19 @@
     <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
+
+    <!-- Pointer Button and Options -->
+    <div class="pointer-button-container">
+        <div class="pointer-button">
+            <i class="material-icons">more_vert</i>
+        </div>
+        <div class="pointer-options">
+            <a href="#" class="option-link"><i class="material-icons">account_circle</i> LinkedIn</a>
+            <a href="#" class="option-link"><i class="material-icons">instagram</i> Instagram</a>
+            <a href="#" class="option-link"><i class="material-icons">facebook</i> Facebook</a>
+            <a href="#" class="option-link"><i class="material-icons">mail</i> Contact</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

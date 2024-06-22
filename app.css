@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    scroll-behavior: smooth; /* Smooth scroll behavior */
 }
 
 #myVideo {
@@ -19,10 +20,10 @@ body {
 
 .logo {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 45px; /* width of your logo */
-    height: 45px; /* height of your logo */
+    top: 10px;
+    left: 10px;
+    width: 45px; /* Adjust width of your logo */
+    height: 45px; /* Adjust height of your logo */
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -74,7 +75,7 @@ header nav ul li a:hover {
 }
 
 .container p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);      
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
@@ -89,6 +90,14 @@ header nav ul li a:hover {
 
 section {
     padding: 80px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section h2 {
@@ -132,11 +141,12 @@ section h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover {
     background-color: #555;
+    transform: scale(1.05);
 }
 
 #toggleButton {
@@ -185,6 +195,12 @@ section h2 {
 .photo img {
     max-width: 100%;
     vertical-align: middle;
+    display: block; /* Ensure images are block elements */
+    transition: opacity 0.3s ease;
+}
+
+.photo:hover img {
+    opacity: 0.8;
 }
 
 .overlay {
@@ -221,7 +237,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    bottom: 0;
+    position: relative; /* Corrected to relative for better footer behavior */
     width: 100%;
 }

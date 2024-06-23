@@ -1,58 +1,32 @@
-// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("myVideo");
+    const optionsButton = document.querySelector(".pointer-button");
+    const optionsContainer = document.querySelector(".pointer-options");
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Toggle "Show More" content
-    const toggleButton = document.getElementById('toggleButton');
-    const moreContent = document.getElementById('moreContent');
-    
-    toggleButton.addEventListener('click', function() {
-        if (moreContent.style.display === 'none' || moreContent.style.display === '') {
-            moreContent.style.display = 'block';
-            toggleButton.textContent = 'Show Less';
-        } else {
-            moreContent.style.display = 'none';
-            toggleButton.textContent = 'Show More';
-        }
+    optionsButton.addEventListener("click", function() {
+        optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
     });
 
-    // Fade-in effect for sections
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-        threshold: 0.5,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('visible');
-                appearOnScroll.unobserve(entry.target);
+    window.addEventListener("scroll", function() {
+        const sections = document.querySelectorAll("section");
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                section.classList.add("fade-in");
             }
         });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
     });
 
-    // Pointer button functionality
-    const pointerButton = document.querySelector('.pointer-button');
-    const pointerOptions = document.querySelector('.pointer-options');
+    const toggleButton = document.getElementById("toggleButton");
+    const moreContent = document.getElementById("moreContent");
 
-    pointerButton.addEventListener('click', function() {
-        if (pointerOptions.style.display === 'none' || pointerOptions.style.display === '') {
-            pointerOptions.style.display = 'flex';
+    toggleButton.addEventListener("click", function() {
+        if (moreContent.style.display === "none" || moreContent.style.display === "") {
+            moreContent.style.display = "block";
+            toggleButton.textContent = "Show Less";
         } else {
-            pointerOptions.style.display = 'none';
-        }
-    });
-
-    document.addEventListener('click', function(event) {
-        if (!pointerButton.contains(event.target) && !pointerOptions.contains(event.target)) {
-            pointerOptions.style.display = 'none';
+            moreContent.style.display = "none";
+            toggleButton.textContent = "Show More";
         }
     });
 });

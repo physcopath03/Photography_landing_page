@@ -327,6 +327,17 @@ footer:hover {
     bottom: 20px;
     right: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    animation: bounce 2s infinite; /* Adding bounce animation */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .pointer-button-container:hover {
@@ -337,7 +348,7 @@ footer:hover {
 .pointer-button {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 15px; /* Increased padding for a larger button */
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -345,11 +356,21 @@ footer:hover {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: rotate 2s infinite; /* Adding rotating animation */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .pointer-button:hover {
-    background-color: #555;
-    transform: scale(1.1);
+    background-color: #1d7d84;
+    transform: scale(1.1) rotate(180deg); /* Combine scale and rotation */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 

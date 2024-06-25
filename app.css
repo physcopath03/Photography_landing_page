@@ -135,157 +135,165 @@ header nav ul li a:hover {
 .hero p {
     font-size: 1.5em;
     font-style: italic;
-    transition: font-size 0.3s ease, font-style 0.3s ease;
+    margin-top: 0;
+    transition: font-size 0.3s ease, margin-top 0.3s ease;
 }
 
 .hero p:hover {
-    font-size: 1.75em;
-    font-style: normal;
+    font-size: 1.8em;
+    margin-top: 10px;
 }
 
-.fade-in {
-    animation: fadeIn 1.5s ease-in-out;
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: blue;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+h2:hover {
+    color: darkblue;
+    transform: scale(1.1);
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+    text-align: center; /* Center align text within about content */
+}
+
+.about-content:hover {
+    transform: translateY(-10px);
 }
 
 .about-content img {
+    border-radius: 50%;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    transition: border-radius 0.3s ease, transform 0.3s ease;
 }
 
 .about-content img:hover {
+    border-radius: 20%;
     transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.about-content p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.about-content p:hover {
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-button {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-    background-color: #555;
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .animated-button {
-    animation: pulse 1.5s infinite;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+.animated-button:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Portfolio Section */
+.more-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.more-content.show {
+    display: block;
+    opacity: 1;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
+    transition: gap 0.3s ease;
+}
+
+.gallery:hover {
+    gap: 20px;
 }
 
 .photo {
     position: relative;
+    width: 300px;
     overflow: hidden;
-    width: 200px; /* Medium size */
-    height: 200px; /* Medium size */
-    border-radius: 50%; /* Circular shape */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease;
+    border-radius: 10px; /* Add border radius for rounded corners */
+}
+
+.photo:hover {
+    width: 320px;
+    border-radius: 15px; /* Add border radius for rounded corners on hover */
 }
 
 .photo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure image covers the circular shape */
+    height: auto;
+    display: block;
     transition: transform 0.3s ease;
-    border-radius: 50%; /* Ensure image is circular */
+    border-radius: 10px; /* Add border radius to images */
 }
 
-.photo:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.photo img:hover {
+    transform: scale(1.1);
+    border-radius: 15px; /* Add border radius to images on hover */
 }
 
 .overlay {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
     opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: opacity 0.3s ease;
-    border-radius: 50%; /* Ensure overlay is circular */
+    border-radius: 10px; /* Add border radius to overlay */
 }
 
 .photo:hover .overlay {
     opacity: 1;
+    border-radius: 15px; /* Add border radius to overlay on hover */
 }
 
 .zoom-icon {
-    color: #fff;
     font-size: 2em;
+    color: #ffcc00;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .zoom-icon:hover {
-    color: #ffcc00;
+    color: #ff9900;
+    transform: scale(1.2);
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center; /* Center align form content */
 }
 
 form label {
@@ -294,121 +302,134 @@ form label {
 
 form input, form textarea {
     padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 form input:focus, form textarea:focus {
-    border-color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+button.animated-button {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: center; /* Center align the button */
+}
+
+button.animated-button:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 footer {
     text-align: center;
-    padding: 20px 0;
-    background-color: #333;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 footer:hover {
-    background-color: #555;
+    background-color: rgba(0, 0, 0, 0.9);
     color: #ffcc00;
 }
 
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Add this CSS for the pointer button and options */
 .pointer-button-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1000;
-    animation: bounce 2s infinite; /* Adding bounce animation */
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.pointer-button-container:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .pointer-button {
-    background-color: #333;
-    color: #fff;
-    padding: 15px; /* Increased padding for a larger button */
+    width: 60px;
+    height: 60px;
+    background-color: #ffcc00;
     border-radius: 50%;
-    cursor: pointer;
     display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    animation: rotate 2s infinite; /* Adding rotating animation */
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 .pointer-button:hover {
-    background-color: #1d7d84;
-    transform: scale(1.1) rotate(180deg); /* Combine scale and rotation */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #ff9900;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .pointer-options {
     display: none;
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
     margin-top: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
 }
 
-.pointer-options.show {
+.pointer-options a {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.option-link {
-    background-color: #333;
-    color: #fff;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffcc00;
+    color: #000;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
-    margin: 5px 0;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.option-link:hover {
-    background-color: #555;
+.pointer-options a:hover {
+    background-color: #ff9900;
     transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Centering sections */
-.about-content,
-.gallery,
-form {
-    margin: 0 auto; /* Centers these sections horizontally */
-    max-width: 600px; /* Adjust as needed */
+.pointer-options a i.material-icons {
+    font-size: 24px;
+}
+
+/* Glowing Effect */
+.pointer-options a.option-link i {
+    font-size: 24px;
+    color: #fff; /* White color for the icon */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    transition: text-shadow 0.3s ease;
+}
+
+.pointer-options a.option-link:hover i {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 1); /* Enhanced glowing effect on hover */
+}
+
+.animated-button.click-animation {
+    animation: clickAnimation 0.3s ease;
+}
+
+@keyframes clickAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
 }

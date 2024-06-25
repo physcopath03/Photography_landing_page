@@ -208,14 +208,14 @@ h2:hover {
 }
 
 .more-content {
-    display: none;
-    opacity: 0;
+    display: flex;
+    opacity: 10;
     transition: opacity 0.3s ease;
 }
 
 .more-content.show {
-    display: block;
-    opacity: 1;
+    display: flex;
+    opacity: 10;
 }
 
 .gallery {
@@ -432,4 +432,59 @@ footer:hover {
     0% { transform: scale(1); }
     50% { transform: scale(0.9); }
     100% { transform: scale(1); }
+}
+
+.portfolio-item {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+}
+
+.image-stack {
+    position: relative;
+    width: 250px; /* Adjust width as needed */
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.image-stack img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-stack img:nth-child(2) {
+    transform: rotate(5deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-stack:hover img:nth-child(2) {
+    transform: rotate(0deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-item p {
+    margin-top: 260px; /* Adjust margin as needed */
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-item:hover p {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+.social-link {
+    color: #385185; /* Adjust color as needed */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-link i {
+    font-size: 24px; /* Adjust icon size */
+    margin-right: 10px; /* Add space between icon and text */
 }

@@ -85,215 +85,145 @@ header nav ul li a:hover {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    transition: box-shadow 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center align content within containers */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 70px; /* Adjusted to make space for the header */
+    position: relative;
 }
 
-.container:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+h1, h2 {
+    text-align: center;
+    color: #333;
 }
 
 .hero {
     text-align: center;
-    padding: 200px 0;
-    background-image: url('hero-background.jpg');
-    background-size: cover;
-    color: greenyellow;
-    transition: color 0.3s ease, background-position 0.3s ease;
-    background-position: center;
-}
-
-.hero:hover {
-    color: yellow;
-    background-position: top;
-}
-
-.container p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    transition: text-shadow 0.3s ease;
-}
-
-.container p:hover {
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    padding: 50px 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
     font-size: 3em;
-    margin-bottom: 20px;
-    transition: font-size 0.3s ease, margin-bottom 0.3s ease;
-}
-
-.hero h1:hover {
-    font-size: 3.5em;
-    margin-bottom: 30px;
+    margin: 0;
 }
 
 .hero p {
     font-size: 1.5em;
-    font-style: italic;
-    margin-top: 0;
-    transition: font-size 0.3s ease, margin-top 0.3s ease;
-}
-
-.hero p:hover {
-    font-size: 1.8em;
-    margin-top: 10px;
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: blue;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-h2:hover {
-    color: darkblue;
-    transform: scale(1.1);
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    transition: transform 0.3s ease;
-    text-align: center; /* Center align text within about content */
-}
-
-.about-content:hover {
-    transform: translateY(-10px);
 }
 
 .about-content img {
+    max-width: 50%;
+    height: 300px;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    transition: border-radius 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-content img:hover {
-    border-radius: 20%;
     transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.more-content {
+    display: none;
+    text-align: center;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    margin-top: 10px;
 }
 
-.animated-button {
-    background-color: #ffcc00;
-    color: #000;
+button {
     padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.animated-button:hover {
-    background-color: #ff9900;
+button:hover {
+    background-color: #ffcc00;
     transform: scale(1.1);
+}
+
+.portfolio-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
-.more-content {
-    display: flex;
-    opacity: 10;
-    transition: opacity 0.3s ease;
-}
-
-.more-content.show {
-    display: flex;
-    opacity: 10;
-}
-
-.gallery {
+.portfolio-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    transition: gap 0.3s ease;
-}
-
-.gallery:hover {
     gap: 20px;
+    justify-content: center;
 }
 
-.photo {
-    position: relative;
+.portfolio-item {
     width: 300px;
     overflow: hidden;
-    transition: width 0.3s ease;
-    border-radius: 10px; /* Add border radius for rounded corners */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.photo:hover {
-    width: 320px;
-    border-radius: 15px; /* Add border radius for rounded corners on hover */
-}
-
-.photo img {
+.portfolio-item img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
-    border-radius: 10px; /* Add border radius to images */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.photo img:hover {
+.portfolio-item:hover img {
     transform: scale(1.1);
-    border-radius: 15px; /* Add border radius to images on hover */
+    filter: brightness(80%);
 }
 
-.overlay {
+.portfolio-overlay {
     position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     color: #fff;
+    padding: 20px;
     opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: opacity 0.3s ease;
-    border-radius: 10px; /* Add border radius to overlay */
 }
 
-.photo:hover .overlay {
+.portfolio-item:hover .portfolio-overlay {
     opacity: 1;
-    border-radius: 15px; /* Add border radius to overlay on hover */
 }
 
-.zoom-icon {
-    font-size: 2em;
-    color: #ffcc00;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+.portfolio-overlay h3 {
+    margin: 0;
 }
 
-.zoom-icon:hover {
-    color: #ff9900;
-    transform: scale(1.2);
+.portfolio-overlay p {
+    margin: 10px 0 0;
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    text-align: center; /* Center align form content */
 }
 
 form label {
@@ -304,32 +234,21 @@ form input, form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-form input:focus, form textarea:focus {
-    border-color: #66afe9;
-    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
-}
-
-button.animated-button {
-    background-color: #ffcc00;
-    color: #000;
-    padding: 10px 20px;
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    align-self: center; /* Center align the button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button.animated-button:hover {
-    background-color: #ff9900;
+form button:hover {
+    background-color: #ffcc00;
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -337,24 +256,10 @@ footer {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    top: 50px;
 }
 
-footer:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: #ffcc00;
-}
-
-.fade-in {
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Add this CSS for the pointer button and options */
 .pointer-button-container {
     position: fixed;
     bottom: 20px;
@@ -363,128 +268,92 @@ footer:hover {
 }
 
 .pointer-button {
-    width: 60px;
-    height: 60px;
-    background-color: #ffcc00;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .pointer-button:hover {
-    background-color: #ff9900;
+    background-color: #ffcc00;
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .pointer-options {
     display: none;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
     position: absolute;
-    bottom: 70px;
+    bottom: 60px;
     right: 0;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .pointer-options a {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background-color: #ffcc00;
-    color: #000;
     padding: 10px;
-    border-radius: 5px;
+    color: #fff;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .pointer-options a:hover {
-    background-color: #ff9900;
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.pointer-options a i.material-icons {
-    font-size: 24px;
-}
-
-/* Glowing Effect */
-.pointer-options a.option-link i {
-    font-size: 24px;
-    color: #fff; /* White color for the icon */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glowing effect */
-    transition: text-shadow 0.3s ease;
-}
-
-.pointer-options a.option-link:hover i {
-    text-shadow: 0 0 16px rgba(255, 255, 255, 1); /* Enhanced glowing effect on hover */
-}
-
-.animated-button.click-animation {
-    animation: clickAnimation 0.3s ease;
-}
-
-@keyframes clickAnimation {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.9); }
-    100% { transform: scale(1); }
-}
-
-.portfolio-item {
-    text-align: center;
-    margin: 20px;
-    position: relative;
-}
-
-.image-stack {
-    position: relative;
-    width: 250px; /* Adjust width as needed */
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-}
-
-.image-stack img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-stack img:nth-child(2) {
-    transform: rotate(5deg);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.image-stack:hover img:nth-child(2) {
-    transform: rotate(0deg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.portfolio-item p {
-    margin-top: 260px; /* Adjust margin as needed */
-    font-size: 1.5em;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.portfolio-item:hover p {
-    color: #ffcc00;
+    background-color: #ffcc00;
     transform: scale(1.1);
 }
-.social-link {
-    color: #385185; /* Adjust color as needed */
-    text-decoration: none;
-    font-size: 18px;
+
+.pointer-button-container.active .pointer-options {
+    display: block;
+    animation: slideIn 0.3s forwards;
 }
 
-.social-link i {
-    font-size: 24px; /* Adjust icon size */
-    margin-right: 10px; /* Add space between icon and text */
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.animated-button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.animated-button:hover {
+    transform: scale(1.1);
+    background-color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
 }
